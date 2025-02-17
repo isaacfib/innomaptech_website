@@ -823,40 +823,73 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h4>About Us</h4>
-                    <p>INNOMAPTECH is dedicated to providing cutting-edge mapping and tech solutions for various industries. We empower our clients with precise data and innovative tools.</p>
-                    <div class="social-links">
-                        <a href="#" aria-label="Visit our Facebook page"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-                        <a href="#" aria-label="Visit our Twitter page"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-                        <a href="#" aria-label="Visit our LinkedIn page"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <nav class="footer-links" aria-label="Footer navigation">
-                        <a href="#services"><i class="fas fa-chevron-right" aria-hidden="true"></i> Services</a>
-                        <a href="#industries"><i class="fas fa-chevron-right" aria-hidden="true"></i> Industries</a>
-                        <a href="#benefits"><i class="fas fa-chevron-right" aria-hidden="true"></i> Benefits</a>
-                        <a href="#contact"><i class="fas fa-chevron-right" aria-hidden="true"></i> Contact</a>
-                    </nav>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact Information</h4>
-                    <div class="footer-links">
-                        <a href="#"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> 123 Innovation Drive, Tech City</a>
-                        <a href="mailto:info@innomaptech.com"><i class="fas fa-envelope" aria-hidden="true"></i> info@innomaptech.com</a>
-                        <a href="tel:+15551234567"><i class="fas fa-phone" aria-hidden="true"></i> +1 (555) 123-4567</a>
-                    </div>
+    <div class="container">
+        <div class="footer-grid">
+            <!-- About Us Section -->
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>INNOMAPTECH is dedicated to providing cutting-edge mapping and tech solutions for various industries. We empower our clients with precise data and innovative tools.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                &copy; 2025 INNOMAPTECH. All rights reserved.
+
+            <!-- Quick Links Section -->
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <nav class="footer-links" aria-label="Footer navigation">
+                    <a href="#services"><i class="fas fa-chevron-right"></i> Services</a>
+                    <a href="#industries"><i class="fas fa-chevron-right"></i> Industries</a>
+                    <a href="#benefits"><i class="fas fa-chevron-right"></i> Benefits</a>
+                    <a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a>
+                </nav>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="footer-section">
+                <h4>Contact Information</h4>
+                <div class="footer-links">
+                    <a href="#"><i class="fas fa-map-marker-alt"></i> 123 Innovation Drive, Tech City</a>
+                    <a href="mailto:info@innomaptech.com"><i class="fas fa-envelope"></i> info@innomaptech.com</a>
+                    <a href="tel:+15551234567"><i class="fas fa-phone"></i> +1 (555) 123-4567</a>
+                </div>
             </div>
         </div>
-    </footer>
+        <div class="footer-bottom">
+            &copy; 2025 INNOMAPTECH. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+<style>
+    /* Add these CSS adjustments */
+    .footer-section {
+        padding: 0 1rem;
+    }
+
+    .footer-section h4 {
+        font-size: 1.25rem;
+        margin-bottom: 1.25rem;
+        padding-left: 0.5rem;
+        border-left: 3px solid var(--primary);
+    }
+
+    .footer-links {
+        padding-left: 0.5rem;
+    }
+
+    .footer-links a {
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .social-links {
+        padding-left: 0.5rem;
+        margin-top: 1.5rem;
+    }
+</style>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
