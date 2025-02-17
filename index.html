@@ -825,6 +825,7 @@
     <footer>
     <div class="container">
         <div class="footer-grid">
+            <!-- About Us Section -->
             <div class="footer-section">
                 <h4>About Us</h4>
                 <p>INNOMAPTECH is dedicated to providing cutting-edge mapping and tech solutions for various industries. We empower our clients with precise data and innovative tools.</p>
@@ -834,15 +835,19 @@
                     <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
-            <div class="footer-section">
-                <h4 class="footer-title">Quick Links</h4>
-                <nav class="footer-links" aria-label="Footer navigation">
+
+            <!-- Quick Links Section -->
+             <div class="footer-section">
+                <h4 class="centered-title">Quick Links</h4>
+                <nav class="footer-links centered-links" aria-label="Footer navigation">
                     <a href="#services"><i class="fas fa-chevron-right"></i> Services</a>
                     <a href="#industries"><i class="fas fa-chevron-right"></i> Industries</a>
                     <a href="#benefits"><i class="fas fa-chevron-right"></i> Benefits</a>
                     <a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a>
                 </nav>
             </div>
+
+            <!-- Contact Information -->
             <div class="footer-section">
                 <h4>Contact Information</h4>
                 <div class="footer-links">
@@ -857,54 +862,49 @@
         </div>
     </div>
 </footer>
+
 <style>
-    /* Add these CSS adjustments */
-   .footer-section h4 {
+    /* Updated CSS for footer alignment */
+    .footer-section .centered-title {
+        text-align: center;
+        border-left: none;
+        padding-left: 0;
+        margin-bottom: 1.5rem;
+        width: 100%;
+        display: block;
+    }
+
+    .centered-links {
+        text-align: center;
+        padding-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    /* Original footer styles for consistency */
+    .footer-section h4 {
         font-size: 1.25rem;
         margin-bottom: 1.25rem;
         padding-left: 0.5rem;
         border-left: 3px solid var(--primary);
         text-align: left;
     }
-    .footer-title{
-        text-align: left; /* Align the title to the left */
-        padding-left: 0.5rem; /* Add some left padding to align with other titles */
-        border-left: 3px solid var(--primary); /* Add the border */
-        font-size: 1.25rem;
-        margin-bottom: 1.25rem;
-    }
+
     .footer-links {
         padding-left: 0.5rem;
     }
+
     .footer-links a {
         align-items: flex-start;
         gap: 0.75rem;
-        display: block; /* Make links stack vertically */
     }
+
     .social-links {
         padding-left: 0.5rem;
         margin-top: 1.5rem;
     }
-    .footer-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
-        gap: 2rem; /* Spacing between grid items */
-    }
-    .container {
-        max-width: 1200px; /* Set a maximum width for the container */
-        margin: 0 auto; /* Center the container */
-        padding: 2rem; /* Add padding to the container */
-    }
-    footer {
-        background-color: #f8f9fa; /* Example background color */
-        padding: 2rem 0; /* Add padding to the footer */
-    }
-    .footer-bottom {
-        text-align: center;
-        padding-top: 1rem;
-        border-top: 1px solid #dee2e6; /* Add a separator line */
-    }
-
 </style>
 
     <!-- Scripts -->
