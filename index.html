@@ -8,13 +8,13 @@
     <meta name="description"
         content="INNOMAPTECH - Revolutionize your land projects with tech-enabled mapping solutions providing pinpoint-accurate, interactive digital maps for decisive actions.">
     <meta name="keywords"
-        content="land mapping, geospatial technology, GIS solutions, digital cartography, coordinate acquisition, geomatics, topographic mapping">
+        content="land mapping, digital mapping, coordinate acquisition, interactive maps, real estate mapping, agricultural mapping">
     <meta name="author" content="INNOMAPTECH">
-    <title>INNOMAPTECH - Innovative Geospatial Mapping Solutions</title>
+    <title>INNOMAPTECH - Innovative Mapping and Tech Solutions</title>
 
     <!-- Preload Resources -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        as="style" crossorigin>
+        as="style">
     <link rel="preload"
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
         as="style" crossorigin>
@@ -47,17 +47,11 @@
             --focus-ring: 0 0 0 3px rgba(2, 132, 199, 0.4);
         }
 
-        /* Improved reset and base styles */
-        *,
-        *::before,
-        *::after {
+        /* Basic resets and typography */
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
         }
 
         body {
@@ -68,7 +62,638 @@
             overflow-x: hidden;
         }
 
-        /* Accessibility improvements */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Space Grotesk', sans-serif;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 clamp(1rem, 3vw, 2rem);
+        }
+
+        .visually-hidden {
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+        }
+
+        /* A11y focus styles */
+        a:focus,
+        button:focus,
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            box-shadow: var(--focus-ring);
+        }
+
+        /* Skip link for keyboard users */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary);
+            color: white;
+            padding: 8px;
+            z-index: 1001;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 0.75rem 0;
+            background: rgba(255, 255, 255, 0.98);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--text);
+            transition: var(--transition);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            padding: 160px 0 80px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            background-image: url('/api/placeholder/1920/1080');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 3vw, 1.25rem);
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 0;
+            background: var(--surface);
+        }
+
+        .section-intro {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--surface);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .service-card-content {
+            flex-grow: 1;
+        }
+
+        .service-card .learn-more {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: auto;
+            transition: var(--transition);
+        }
+
+        .service-card .learn-more i {
+            transition: transform 0.3s ease;
+            margin-left: 0.5rem;
+        }
+
+        .service-card .learn-more:hover {
+            color: var(--primary-dark);
+        }
+
+        .service-card .learn-more:hover i {
+            transform: translateX(4px);
+        }
+
+        /* Industries Section */
+        .industries {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+
+        .industry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .industry-card {
+            background: var(--surface);
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            height: 100%;
+        }
+
+        .industry-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.15);
+        }
+
+        .industry-card i {
+            font-size: 3rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 50%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 6rem 0;
+            background: var(--surface);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 2.5rem;
+            background: var(--surface);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.15);
+        }
+
+        .benefit-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            padding: 2rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-info p {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .map-container {
+            margin-top: 2rem;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .contact-form {
+            background: var(--surface);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: var(--transition);
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: var(--focus-ring);
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .cta-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .footer-links a i {
+            margin-right: 0.5rem;
+            font-size: 0.875rem;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+        }
+
+        .footer-links a:hover i {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.95);
+                flex-direction: column;
+                text-align: center;
+                padding: 1rem 0;
+                box-shadow: var(--shadow);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 1rem;
+                display: block;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                margin-bottom: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 120px 0 60px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-section {
+                margin-bottom: 2rem;
+            }
+        }
+
+        /* Enhanced Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--text);
+            transition: var(--transition);
+        }
+
+        .mobile-menu-toggle .toggle-icon {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--text);
+            margin: 6px auto;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .mobile-menu-toggle[aria-expanded="true"] .toggle-icon {
+            background-color: transparent;
+        }
+
+        .mobile-menu-toggle[aria-expanded="true"] .toggle-icon::before {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        .mobile-menu-toggle[aria-expanded="true"] .toggle-icon::after {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+
+        .mobile-menu-toggle .toggle-icon::before,
+        .mobile-menu-toggle .toggle-icon::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--text);
+            transition: transform 0.3s ease;
+        }
+
+        /* no-scroll class to prevent scrolling */
+        .no-scroll {
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        /* Accessibility */
         .sr-only {
             position: absolute;
             width: 1px;
@@ -80,197 +705,6 @@
             white-space: nowrap;
             border: 0;
         }
-
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: var(--primary);
-            color: white;
-            padding: 8px 16px;
-            z-index: 1001;
-            transition: transform 0.3s;
-            transform: translateY(-100%);
-        }
-
-        .skip-link:focus {
-            transform: translateY(0);
-        }
-
-        /* Enhanced header navigation */
-        header {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-            z-index: 1002;
-        }
-
-        .toggle-icon {
-            display: block;
-            width: 25px;
-            height: 2px;
-            background-color: var(--text);
-            position: relative;
-            transition: var(--transition);
-        }
-
-        .toggle-icon::before,
-        .toggle-icon::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            background-color: var(--text);
-            transition: var(--transition);
-        }
-
-        .toggle-icon::before {
-            transform: translateY(-6px);
-        }
-
-        .toggle-icon::after {
-            transform: translateY(6px);
-        }
-
-        .mobile-menu-toggle[aria-expanded="true"] .toggle-icon {
-            background-color: transparent;
-        }
-
-        .mobile-menu-toggle[aria-expanded="true"] .toggle-icon::before {
-            transform: rotate(45deg);
-        }
-
-        .mobile-menu-toggle[aria-expanded="true"] .toggle-icon::after {
-            transform: rotate(-45deg);
-        }
-
-        /* Improved responsive navigation */
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text);
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            background: rgba(2, 132, 199, 0.1);
-            color: var(--primary);
-        }
-
-        @media (max-width: 768px) {
-            .mobile-menu-toggle {
-                display: block;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                height: 100vh;
-                width: 70%;
-                max-width: 300px;
-                background: var(--surface);
-                flex-direction: column;
-                padding: 6rem 2rem 2rem;
-                box-shadow: var(--shadow);
-                transition: right 0.3s ease;
-            }
-
-            .nav-links.active {
-                right: 0;
-            }
-
-            .nav-links a {
-                padding: 1rem;
-                border-radius: 8px;
-            }
-        }
-
-        /* Enhanced hero section */
-        .hero {
-            min-height: 100vh;
-            padding: 120px 0 80px;
-            background: linear-gradient(135deg, rgba(2, 132, 199, 0.9), rgba(99, 102, 241, 0.9)),
-                        url('assets/hero-bg.jpg') center/cover;
-            color: white;
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Improved form validation */
-        .form-group {
-            position: relative;
-            margin-bottom: 1.5rem;
-        }
-
-        .form-error {
-            color: #dc2626;
-            font-size: 0.875rem;
-            position: absolute;
-            bottom: -20px;
-            left: 0;
-            display: none;
-        }
-
-        .form-group.error .form-error {
-            display: block;
-        }
-
-        /* Responsive iframe */
-        .map-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-        }
-
-        .map-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        /* Rest of CSS remains similar with optimizations */
-        /* ... (other styles remain mostly the same with minor optimizations) ... */
     </style>
 </head>
 
@@ -283,19 +717,19 @@
         <div class="container">
             <nav aria-label="Main navigation">
                 <a href="/" class="logo">
-                    <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
+                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                     INNOMAPTECH
                 </a>
-                <button class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false"
-                    aria-controls="nav-links">
-                    <span class="toggle-icon"></span>
+                <button class="mobile-menu-toggle" aria-controls="nav-links" aria-expanded="false">
+                    <span class="sr-only">Menu</span>
+                    <span class="toggle-icon" aria-hidden="true"></span>
                 </button>
-                <ul class="nav-links" id="nav-links">
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#industries">Industries</a></li>
-                    <li><a href="#benefits">Benefits</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                <ul class="nav-links" id="nav-links" role="menubar">
+                    <li role="none"><a href="#" role="menuitem" class="active">Home</a></li>
+                    <li role="none"><a href="#services" role="menuitem">Services</a></li>
+                    <li role="none"><a href="#industries" role="menuitem">Industries</a></li>
+                    <li role="none"><a href="#benefits" role="menuitem">Benefits</a></li>
+                    <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -305,61 +739,165 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="container">
-                <div class="hero-content" data-aos="zoom-in">
-                    <h1>Precision Geospatial Solutions</h1>
-                    <p>Transform your land management with AI-powered mapping and real-time geospatial analytics.</p>
-                    <a href="#contact" class="cta-button">
-                        Start Your Project
-                        <i class="fas fa-chevron-right"></i>
+                <div class="hero-content">
+                    <h1>Revolutionizing Land Mapping with Technology</h1>
+                    <p>Unlock the power of precise digital maps for your projects. INNOMAPTECH provides innovative mapping and tech
+                        solutions for informed decision-making.</p>
+                    <a href="#" class="cta-button">
+                        Learn More
+                        <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- Rest of sections remain similar with improved semantics -->
-        <!-- ... (other sections remain mostly the same with accessibility improvements) ... -->
+        <!-- Services Section -->
+        <section id="services" class="services">
+            <div class="container">
+                <div class="section-intro" data-aos="fade-up">
+                    <h2>Our Services</h2>
+                    <p>We offer a range of tech-enabled mapping solutions to meet your specific needs. Explore our services and discover how we can help you achieve your project goals.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://source.unsplash.com/random/600x400/?land" alt="Land Mapping" loading="lazy"
+                            width="600" height="400">
+                        <div class="service-card-content">
+                            <h3>Land Mapping</h3>
+                            <p>Pinpoint-accurate land mapping for real estate, agriculture, and urban planning. Get detailed insights into your land assets.</p>
+                            <a href="#" class="learn-more">
+                                Learn More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://source.unsplash.com/random/600x400/?digital" alt="Digital Mapping" loading="lazy"
+                            width="600" height="400">
+                        <div class="service-card-content">
+                            <h3>Digital Mapping</h3>
+                            <p>Transform your traditional maps into interactive digital formats. Access your data anytime, anywhere, with ease.</p>
+                            <a href="#" class="learn-more">
+                                Learn More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                        <img src="https://source.unsplash.com/random/600x400/?coordinates" alt="Coordinate Acquisition"
+                            loading="lazy" width="600" height="400">
+                        <div class="service-card-content">
+                            <h3>Coordinate Acquisition</h3>
+                            <p>Acquire precise coordinates using state-of-the-art technology. Ensure accuracy in all your mapping projects.</p>
+                            <a href="#" class="learn-more">
+                                Learn More
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Industries Section -->
+        <section id="industries" class="industries">
+            <div class="container">
+                <div class="section-intro" data-aos="fade-up">
+                    <h2>Industries We Serve</h2>
+                    <p>Our mapping solutions cater to a diverse range of industries, providing tailored solutions for unique challenges.</p>
+                </div>
+                <div class="industry-grid">
+                    <div class="industry-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-building"></i>
+                        <h3>Real Estate</h3>
+                        <p>Enhance property management with detailed land and digital mapping.</p>
+                    </div>
+                    <div class="industry-card" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-tractor"></i>
+                        <h3>Agriculture</h3>
+                        <p>Optimize crop management with precise coordinate acquisition and mapping.</p>
+                    </div>
+                    <div class="industry-card" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-city"></i>
+                        <h3>Urban Planning</h3>
+                        <p>Develop sustainable urban areas with comprehensive mapping solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section id="benefits" class="benefits">
+            <div class="container">
+                <div class="section-intro" data-aos="fade-up">
+                    <h2>Key Benefits</h2>
+                    <p>Experience the advantages of tech-enabled mapping with INNOMAPTECH. We provide solutions that deliver tangible
+                        results.</p>
+                </div>
+                <div class="benefits-grid">
+                    <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Accuracy</h3>
+                        <p>Ensure precision in all your mapping projects.</p>
+                    </div>
+                    <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-clock"></i>
+                        <h3>Efficiency</h3>
+                        <p>Streamline your workflows with our tech-enabled solutions.</p>
+                    </div>
+                    <div class="benefit-card" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Data-Driven Decisions</h3>
+                        <p>Make informed decisions based on reliable mapping data.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Contact Section -->
         <section id="contact" class="contact">
             <div class="container">
-                <h2 class="section-title">Contact Us</h2>
+                <h2>Contact Us</h2>
                 <div class="contact-grid">
-                    <div class="contact-info">
-                        <div class="contact-details">
-                            <h3>Get in Touch</h3>
-                            <address>
-                                <p><i class="fas fa-map-marker-alt"></i> 456 Geospatial Way, Tech Valley</p>
-                                <p><i class="fas fa-envelope"></i> <a href="mailto:contact@innomaptech.com">contact@innomaptech.com</a></p>
-                                <p><i class="fas fa-phone"></i> <a href="tel:+18885551234">+1 (888) 555-1234</a></p>
-                            </address>
-                        </div>
+                    <div class="contact-info" data-aos="fade-up">
+                        <h3>Get in Touch</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Innovation Drive, Tech City</p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:info@innomaptech.com">info@innomaptech.com</a></p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:+15551234567">+1 (555) 123-4567</a></p>
                         <div class="map-container">
-                            <iframe title="Company Location"
+                            <!-- Replace with your actual Google Maps embed code -->
+                            <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3311.047953949271!2d18.415184274085675!3d-33.90929022668473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc51a4e905d86f%3A0x75efc31ca8d6f2b4!2sCape%20Town%20City%20Hall!5e0!3m2!1sen!2sza!4v1707756677854!5m2!1sen!2sza"
-                                loading="lazy"></iframe>
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
-                    <form id="contactForm" class="contact-form">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" required>
-                            <span class="form-error"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
-                            <span class="form-error"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Project Details</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                            <span class="form-error"></span>
-                        </div>
-                        <button type="submit" class="cta-button">
-                            Send Message
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
+                    <div class="contact-form" data-aos="fade-up">
+                        <h3>Send us a Message</h3>
+                        <form id="contact-form" method="POST" action="/submit-form">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone (optional)</label>
+                                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                    placeholder="123-456-7890">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="cta-button">
+                                Send Message
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
@@ -367,106 +905,15 @@
 
     <!-- Footer -->
     <footer>
-        <!-- Improved footer structure -->
-        <!-- ... (footer content with enhanced accessibility) ... -->
-    </footer>
-
-    <!-- JavaScript Enhancements -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            offset: 100,
-            once: true
-        });
-
-        // Mobile navigation
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-
-        mobileMenuToggle.addEventListener('click', () => {
-            const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
-            mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
-            navLinks.classList.toggle('active');
-            document.body.classList.toggle('no-scroll', !isExpanded);
-        });
-
-        // Close mobile menu on click outside
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.nav-links') && !e.target.closest('.mobile-menu-toggle')) {
-                mobileMenuToggle.setAttribute('aria-expanded', 'false');
-                navLinks.classList.remove('active');
-                document.body.classList.remove('no-scroll');
-            }
-        });
-
-        // Form validation
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            let isValid = true;
-
-            // Reset errors
-            document.querySelectorAll('.form-group').forEach(group => group.classList.remove('error'));
-
-            // Validate fields
-            const name = document.getElementById('name');
-            if (name.value.trim() === '') {
-                showError(name, 'Please enter your name');
-                isValid = false;
-            }
-
-            const email = document.getElementById('email');
-            if (!validateEmail(email.value.trim())) {
-                showError(email, 'Please enter a valid email');
-                isValid = false;
-            }
-
-            if (isValid) {
-                // Submit form
-                contactForm.classList.add('loading');
-                // Simulate API call
-                setTimeout(() => {
-                    contactForm.reset();
-                    contactForm.classList.remove('loading');
-                    showSuccessMessage('Message sent successfully!');
-                }, 1500);
-            }
-        });
-
-        function showError(input, message) {
-            const formGroup = input.closest('.form-group');
-            formGroup.classList.add('error');
-            formGroup.querySelector('.form-error').textContent = message;
-        }
-
-        function validateEmail(email) {
-            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-        }
-
-        function showSuccessMessage(message) {
-            const alert = document.createElement('div');
-            alert.className = 'success-alert';
-            alert.textContent = message;
-            document.body.appendChild(alert);
-            setTimeout(() => alert.remove(), 3000);
-        }
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-    </script>
-</body>
-
-</html>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>About Us</h4>
+                    <p>INNOMAPTECH is dedicated to providing cutting-edge mapping and tech solutions for various industries. We
+                        empower our clients with precise data and innovative tools.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
