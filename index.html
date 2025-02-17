@@ -1,36 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="INNOMAPTECH - Revolutionize your land projects with tech-enabled mapping solutions providing pinpoint-accurate, interactive digital maps for decisive actions.">
-    <meta name="keywords"
-        content="land mapping, digital mapping, coordinate acquisition, interactive maps, real estate mapping, agricultural mapping">
+    <meta name="description" content="INNOMAPTECH - Revolutionize your land projects with tech-enabled mapping solutions providing pinpoint-accurate, interactive digital maps for decisive actions.">
+    <meta name="keywords" content="land mapping, digital mapping, coordinate acquisition, interactive maps, real estate mapping, agricultural mapping">
     <meta name="author" content="INNOMAPTECH">
     <title>INNOMAPTECH - Innovative Mapping and Tech Solutions</title>
-
-    <!-- Preload Resources -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        as="style">
-    <link rel="preload"
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
-        as="style" crossorigin>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" as="style">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" as="style">
-
+    
     <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
+    
     <!-- CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <!-- Inline Critical CSS -->
     <style>
         :root {
             --primary: #0284c7;
@@ -47,7 +37,6 @@
             --focus-ring: 0 0 0 3px rgba(2, 132, 199, 0.4);
         }
 
-        /* Basic resets and typography */
         * {
             margin: 0;
             padding: 0;
@@ -62,12 +51,7 @@
             overflow-x: hidden;
         }
 
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
+        h1, h2, h3, h4, h5, h6 {
             font-family: 'Space Grotesk', sans-serif;
             line-height: 1.2;
         }
@@ -107,11 +91,7 @@
         }
 
         /* A11y focus styles */
-        a:focus,
-        button:focus,
-        input:focus,
-        textarea:focus,
-        select:focus {
+        a:focus, button:focus, input:focus, textarea:focus, select:focus {
             outline: none;
             box-shadow: var(--focus-ring);
         }
@@ -643,265 +623,186 @@
                 margin-bottom: 2rem;
             }
         }
-
-        /* Enhanced Mobile Menu */
-        .mobile-menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-            color: var(--text);
-            transition: var(--transition);
-        }
-
-        .mobile-menu-toggle .toggle-icon {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background-color: var(--text);
-            margin: 6px auto;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        .mobile-menu-toggle[aria-expanded="true"] .toggle-icon {
-            background-color: transparent;
-        }
-
-        .mobile-menu-toggle[aria-expanded="true"] .toggle-icon::before {
-            transform: translateY(9px) rotate(45deg);
-        }
-
-        .mobile-menu-toggle[aria-expanded="true"] .toggle-icon::after {
-            transform: translateY(-9px) rotate(-45deg);
-        }
-
-        .mobile-menu-toggle .toggle-icon::before,
-        .mobile-menu-toggle .toggle-icon::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background-color: var(--text);
-            transition: transform 0.3s ease;
-        }
-
-        /* no-scroll class to prevent scrolling */
-        .no-scroll {
-            overflow: hidden;
-            height: 100vh;
-        }
-
-        /* Accessibility */
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
     </style>
 </head>
-
 <body>
-    <!-- Skip Link -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <!-- Skip to Content Link -->
+    <a href="#content" class="skip-link">Skip to main content</a>
 
     <!-- Header -->
     <header>
         <div class="container">
-            <nav aria-label="Main navigation">
-                <a href="/" class="logo">
-                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+            <nav>
+                <a href="#" class="logo">
+                    <i class="fas fa-map-marker-alt"></i>
                     INNOMAPTECH
                 </a>
                 <button class="mobile-menu-toggle" aria-controls="nav-links" aria-expanded="false">
-                    <span class="sr-only">Menu</span>
-                    <span class="toggle-icon" aria-hidden="true"></span>
+                    ☰ Menu
                 </button>
-                <ul class="nav-links" id="nav-links" role="menubar">
-                    <li role="none"><a href="#" role="menuitem" class="active">Home</a></li>
-                    <li role="none"><a href="#services" role="menuitem">Services</a></li>
-                    <li role="none"><a href="#industries" role="menuitem">Industries</a></li>
-                    <li role="none"><a href="#benefits" role="menuitem">Benefits</a></li>
-                    <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
-                </ul>
+                <div class="nav-links">
+                    <a href="#" class="active">Home</a>
+                    <a href="#">Services</a>
+                    <a href="#">Industries</a>
+                    <a href="#">Benefits</a>
+                    <a href="#">Contact</a>
+                </div>
             </nav>
         </div>
     </header>
 
-    <main id="main-content">
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>Revolutionizing Land Mapping with Technology</h1>
-                    <p>Unlock the power of precise digital maps for your projects. INNOMAPTECH provides innovative mapping and tech
-                        solutions for informed decision-making.</p>
-                    <a href="#" class="cta-button">
-                        Learn More
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Revolutionizing Land Mapping with Technology</h1>
+                <p>Unlock the power of precise digital maps for your projects. INNOMAPTECH provides innovative mapping and tech solutions for informed decision-making.</p>
+                <a href="#" class="cta-button">
+                    Learn More
+                    <i class="fas fa-arrow-right"></i>
+                </a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Services Section -->
-        <section id="services" class="services">
-            <div class="container">
-                <div class="section-intro" data-aos="fade-up">
-                    <h2>Our Services</h2>
-                    <p>We offer a range of tech-enabled mapping solutions to meet your specific needs. Explore our services and discover how we can help you achieve your project goals.</p>
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-intro" data-aos="fade-up">
+                <h2>Our Services</h2>
+                <p>We offer a range of tech-enabled mapping solutions to meet your specific needs. Explore our services and discover how we can help you achieve your project goals.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://source.unsplash.com/random/600x400/?land" alt="Land Mapping">
+                    <div class="service-card-content">
+                        <h3>Land Mapping</h3>
+                        <p>Pinpoint-accurate land mapping for real estate, agriculture, and urban planning. Get detailed insights into your land assets.</p>
+                        <a href="#" class="learn-more">
+                            Learn More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="services-grid">
-                    <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                        <img src="https://source.unsplash.com/random/600x400/?land" alt="Land Mapping" loading="lazy"
-                            width="600" height="400">
-                        <div class="service-card-content">
-                            <h3>Land Mapping</h3>
-                            <p>Pinpoint-accurate land mapping for real estate, agriculture, and urban planning. Get detailed insights into your land assets.</p>
-                            <a href="#" class="learn-more">
-                                Learn More
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://source.unsplash.com/random/600x400/?digital" alt="Digital Mapping">
+                    <div class="service-card-content">
+                        <h3>Digital Mapping</h3>
+                        <p>Transform your traditional maps into interactive digital formats. Access your data anytime, anywhere, with ease.</p>
+                        <a href="#" class="learn-more">
+                            Learn More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
-                    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                        <img src="https://source.unsplash.com/random/600x400/?digital" alt="Digital Mapping" loading="lazy"
-                            width="600" height="400">
-                        <div class="service-card-content">
-                            <h3>Digital Mapping</h3>
-                            <p>Transform your traditional maps into interactive digital formats. Access your data anytime, anywhere, with ease.</p>
-                            <a href="#" class="learn-more">
-                                Learn More
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                        <img src="https://source.unsplash.com/random/600x400/?coordinates" alt="Coordinate Acquisition"
-                            loading="lazy" width="600" height="400">
-                        <div class="service-card-content">
-                            <h3>Coordinate Acquisition</h3>
-                            <p>Acquire precise coordinates using state-of-the-art technology. Ensure accuracy in all your mapping projects.</p>
-                            <a href="#" class="learn-more">
-                                Learn More
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://source.unsplash.com/random/600x400/?coordinates" alt="Coordinate Acquisition">
+                    <div class="service-card-content">
+                        <h3>Coordinate Acquisition</h3>
+                        <p>Acquire precise coordinates using state-of-the-art technology. Ensure accuracy in all your mapping projects.</p>
+                        <a href="#" class="learn-more">
+                            Learn More
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Industries Section -->
-        <section id="industries" class="industries">
-            <div class="container">
-                <div class="section-intro" data-aos="fade-up">
-                    <h2>Industries We Serve</h2>
-                    <p>Our mapping solutions cater to a diverse range of industries, providing tailored solutions for unique challenges.</p>
+    <!-- Industries Section -->
+    <section id="industries" class="industries">
+        <div class="container">
+            <div class="section-intro" data-aos="fade-up">
+                <h2>Industries We Serve</h2>
+                <p>Our mapping solutions cater to a diverse range of industries, providing tailored solutions for unique challenges.</p>
+            </div>
+            <div class="industry-grid">
+                <div class="industry-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-building"></i>
+                    <h3>Real Estate</h3>
+                    <p>Enhance property management with detailed land and digital mapping.</p>
                 </div>
-                <div class="industry-grid">
-                    <div class="industry-card" data-aos="fade-up" data-aos-delay="100">
-                        <i class="fas fa-building"></i>
-                        <h3>Real Estate</h3>
-                        <p>Enhance property management with detailed land and digital mapping.</p>
-                    </div>
-                    <div class="industry-card" data-aos="fade-up" data-aos-delay="200">
-                        <i class="fas fa-tractor"></i>
-                        <h3>Agriculture</h3>
-                        <p>Optimize crop management with precise coordinate acquisition and mapping.</p>
-                    </div>
-                    <div class="industry-card" data-aos="fade-up" data-aos-delay="300">
-                        <i class="fas fa-city"></i>
-                        <h3>Urban Planning</h3>
-                        <p>Develop sustainable urban areas with comprehensive mapping solutions.</p>
-                    </div>
+                <div class="industry-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-tractor"></i>
+                    <h3>Agriculture</h3>
+                    <p>Optimize crop management with precise coordinate acquisition and mapping.</p>
+                </div>
+                <div class="industry-card" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-city"></i>
+                    <h3>Urban Planning</h3>
+                    <p>Develop sustainable urban areas with comprehensive mapping solutions.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Benefits Section -->
-        <section id="benefits" class="benefits">
-            <div class="container">
-                <div class="section-intro" data-aos="fade-up">
-                    <h2>Key Benefits</h2>
-                    <p>Experience the advantages of tech-enabled mapping with INNOMAPTECH. We provide solutions that deliver tangible
-                        results.</p>
+    <!-- Benefits Section -->
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <div class="section-intro" data-aos="fade-up">
+                <h2>Key Benefits</h2>
+                <p>Experience the advantages of tech-enabled mapping with INNOMAPTECH. We provide solutions that deliver tangible results.</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Accuracy</h3>
+                    <p>Ensure precision in all your mapping projects.</p>
                 </div>
-                <div class="benefits-grid">
-                    <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
-                        <i class="fas fa-check-circle"></i>
-                        <h3>Accuracy</h3>
-                        <p>Ensure precision in all your mapping projects.</p>
-                    </div>
-                    <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
-                        <i class="fas fa-clock"></i>
-                        <h3>Efficiency</h3>
-                        <p>Streamline your workflows with our tech-enabled solutions.</p>
-                    </div>
-                    <div class="benefit-card" data-aos="fade-up" data-aos-delay="300">
-                        <i class="fas fa-chart-line"></i>
-                        <h3>Data-Driven Decisions</h3>
-                        <p>Make informed decisions based on reliable mapping data.</p>
-                    </div>
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-clock"></i>
+                    <h3>Efficiency</h3>
+                    <p>Streamline your workflows with our tech-enabled solutions.</p>
+                </div>
+                <div class="benefit-card" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Data-Driven Decisions</h3>
+                    <p>Make informed decisions based on reliable mapping data.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
-            <div class="container">
-                <h2>Contact Us</h2>
-                <div class="contact-grid">
-                    <div class="contact-info" data-aos="fade-up">
-                        <h3>Get in Touch</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> 123 Innovation Drive, Tech City</p>
-                        <p><i class="fas fa-envelope"></i> <a href="mailto:info@innomaptech.com">info@innomaptech.com</a></p>
-                        <p><i class="fas fa-phone"></i> <a href="tel:+15551234567">+1 (555) 123-4567</a></p>
-                        <div class="map-container">
-                            <!-- Replace with your actual Google Maps embed code -->
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3311.047953949271!2d18.415184274085675!3d-33.90929022668473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc51a4e905d86f%3A0x75efc31ca8d6f2b4!2sCape%20Town%20City%20Hall!5e0!3m2!1sen!2sza!4v1707756677854!5m2!1sen!2sza"
-                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-info" data-aos="fade-up">
+                    <h3>Get in Touch</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Innovation Drive, Tech City</p>
+                    <p><i class="fas fa-envelope"></i> info@innomaptech.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <div class="map-container">
+                         <!-- Replace with your actual Google Maps embed code -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3311.047953949271!2d18.415184274085675!3d-33.90929022668473!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc51a4e905d86f%3A0x75efc31ca8d6f2b4!2sCape%20Town%20City%20Hall!5e0!3m2!1sen!2sza!4v1707756677854!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="contact-form" data-aos="fade-up">
+                    <h3>Send us a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
                         </div>
-                    </div>
-                    <div class="contact-form" data-aos="fade-up">
-                        <h3>Send us a Message</h3>
-                        <form id="contact-form" method="POST" action="/submit-form">
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone (optional)</label>
-                                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                                    placeholder="123-456-7890">
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" rows="5" required></textarea>
-                            </div>
-                            <button type="submit" class="cta-button">
-                                Send Message
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
-                        </form>
-                    </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button">
+                            Send Message
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -909,11 +810,64 @@
             <div class="footer-grid">
                 <div class="footer-section">
                     <h4>About Us</h4>
-                    <p>INNOMAPTECH is dedicated to providing cutting-edge mapping and tech solutions for various industries. We
-                        empower our clients with precise data and innovative tools.</p>
+                    <p>INNOMAPTECH is dedicated to providing cutting-edge mapping and tech solutions for various industries. We empower our clients with precise data and innovative tools.</p>
                     <div class="social-links">
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                         <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                         <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="#"><i class="fas fa-chevron-right"></i> Services</a>
+                        <a href="#"><i class="fas fa-chevron-right"></i> Industries</a>
+                        <a href="#"><i class="fas fa-chevron-right"></i> Benefits</a>
+                        <a href="#"><i class="fas fa-chevron-right"></i> Contact</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <div class="footer-links">
+                        <a href="#"><i class="fas fa-map-marker-alt"></i> 123 Innovation Drive, Tech City</a>
+                        <a href="#"><i class="fas fa-envelope"></i> info@innomaptech.com</a>
+                        <a href="#"><i class="fas fa-phone"></i> +1 (555) 123-4567</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 INNOMAPTECH. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuToggle.addEventListener('click', function() {
+            const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+            this.setAttribute('aria-expanded', !expanded);
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
